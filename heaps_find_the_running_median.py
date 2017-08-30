@@ -1,5 +1,5 @@
 #!/bin/python3
-# https://www.hackerrank.com/challenges/ctci-find-the-running-median
+#https://www.hackerrank.com/challenges/ctci-find-the-running-median
 import sys
 
 def lt(x,y):
