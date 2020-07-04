@@ -1,7 +1,4 @@
 #!/bin/bash
-
-diff -u $1.out <(./$1.py < $1.in)
-
 for file in $PWD/$1*.out
 do
     echo "Checking $(basename -- "$file")"
