@@ -6,33 +6,19 @@ import random
 import re
 import sys
 from collections import Counter
-
-geometricProgressionMax = 3
-
-# Although this solution is nice, it doesn't take into account the constraint of ascending order, the counter breaks it
-# def countTriplets(arr, r):
-# 	count = 0
-# 	amountOfValues = Counter(arr)
-# 	print(amountOfValues)
-
-# 	for key in amountOfValues.keys():
-# 		if key == 0 and amountOfValues[key] > 2:
-# 			count += int(amountOfValues[key]*(amountOfValues[key]-1)/2)
-# 		elif r == 1 and amountOfValues[key] > 2:
-# 			count += int(amountOfValues[key]*(amountOfValues[key]-1)/2)
-# 		else: 
-# 			localProgressionTriplets = 1
-# 			for geometricProgression in range(geometricProgressionMax):
-# 				localProgressionTriplets *= amountOfValues[key*(r**geometricProgression)]
-
-# 			count += localProgressionTriplets
-
-# 	return count		
+		
 
 # Complete the countTriplets function below.
 def countTriplets(arr, r):
-	
-	
+    v2 = defaultdict(int)
+    v3 = defaultdict(int)
+    count = 0
+    for k in arr:
+        count += v3[k]
+        v3[k*r] += v2[k]
+        v2[k*r] += 1
+
+    return count
 
 if __name__ == '__main__':
 	nr = input().rstrip().split()
